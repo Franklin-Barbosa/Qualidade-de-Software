@@ -4,7 +4,8 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { toast } from 'sonner'
 
 interface NewNoteCardProps {
-  onNoteCriated: (content: string) => void
+  // definir a interface da props com propriedades somente leitura com o readonly
+  readonly onNoteCriated: (content: string) => void
 }
 
 let speechRecognition: SpeechRecognition | null = null
