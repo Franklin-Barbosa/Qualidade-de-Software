@@ -10,7 +10,7 @@ interface NoteCardProps {
     date: Date
     content: string
   }
-  onNoteDeleted: (id: string) => void
+  readonly onNoteDeleted: (id: string) => void
 }
 
 export function NoteCard({ note, onNoteDeleted }: NoteCardProps){
