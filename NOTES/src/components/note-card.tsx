@@ -4,7 +4,8 @@ import { ptBR } from 'date-fns/locale'
 import { X } from 'lucide-react'
 
 interface NoteCardProps {
-  note: {
+  // definir a interface da props com propriedades somente leitura com o readonly
+  readonly note: {
     id: string
     date: Date
     content: string
