@@ -23,3 +23,15 @@ jobs:
           npm install react
           npm install react-dom
 
+
+      - name: Format Code with Prettier
+        run: |
+          cd NOTES
+          cd src
+          npx prettier . --write
+
+      - name: Check Code Formatting
+        run: |
+          cd NOTES
+          cd src
+          npx prettier . --check
