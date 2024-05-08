@@ -35,3 +35,9 @@ jobs:
           cd NOTES
           cd src
           npx prettier . --check
+
+      - name: Run JSCPD
+        run: |
+          cd  NOTES
+          cd src
+          npx jscpd 
