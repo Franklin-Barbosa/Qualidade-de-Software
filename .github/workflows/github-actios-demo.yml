@@ -1,5 +1,4 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
 
 on: 
   push:
@@ -50,5 +49,5 @@ jobs:
         run: |
           cd NOTES
           cd src
-          npm lint --ext js,jsx --report-unused-disable-directives
+          npx eslint --ext js,jsx --report-unused-disable-directives
 
