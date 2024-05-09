@@ -49,5 +49,5 @@ jobs:
         run: |
           cd NOTES
           cd src
-          npx eslint 
+          npx eslint --ext js,jsx --report-unused-disable-directives
 
