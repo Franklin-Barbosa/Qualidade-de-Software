@@ -1,5 +1,4 @@
 name: learn-github-actions
-
 run-name: ${{ github.actor }} is learning GitHub Actions
 
 on: 
@@ -23,7 +22,8 @@ jobs:
           npm install react
           npm install react-dom
 
-
+      ## Prettier, uma ferramenta popular para garantir a consistência e a legibilidade do código.
+      ## https://prettier.io/
       - name: Format Code with Prettier
         run: |
           cd NOTES
@@ -36,8 +36,19 @@ jobs:
           cd src
           npx prettier . --check
 
+      ## JSCPD, uma ferramenta de detecção de código duplicado em projetos JavaScript
+      ## https://www.npmjs.com/package/jscpd 
       - name: Run JSCPD
         run: |
-          cd  NOTES
+          cd NOTES
           cd src
           npx jscpd 
+
+      ## ESLint analisa estaticamente seu código para encontrar problemas rapidamente. 
+      ## https://eslint.org/ 
+      - name: Run ESLint
+        run: |
+          cd NOTES
+          cd src
+          npm lint --ext js,jsx --report-unused-disable-directives
+
