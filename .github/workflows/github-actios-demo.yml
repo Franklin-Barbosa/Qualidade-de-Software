@@ -51,7 +51,6 @@ jobs:
       ## Correção do erro de sintaxe no arquivo linter.js
       - name: Fix ESLint Syntax Error
         run: |
-          cd C:\npm\cache\_npx\1164\node_modules\eslint\lib\linter
           cd C:\npm\cache\_npx\7628\node_modules\eslint\lib\linter
           sed -i '823s/??=/=/' /linter.js
  
