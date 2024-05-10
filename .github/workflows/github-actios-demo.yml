@@ -43,6 +43,9 @@ jobs:
           cd src
           npx jscpd 
 
+      - name: Install ESLint and security plugin
+        run: npm install eslint eslint-plugin-security --save-dev
+        
       ## ESLint analisa estaticamente seu código para encontrar problemas rapidamente. 
       ## https://eslint.org/ 
       - name: Run ESLint
@@ -50,4 +53,6 @@ jobs:
           cd NOTES
           cd src
           npx eslint --ext js,jsx --report-unused-disable-directives
+
+      - name: Upload ESLint results 
 
