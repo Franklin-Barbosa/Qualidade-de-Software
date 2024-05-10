@@ -54,6 +54,13 @@ jobs:
           cd src
           npx eslint --ext js,jsx --report-unused-disable-directives
 
+      ## Correção do erro de sintaxe no arquivo linter.js
+      - name: Fix ESLint Syntax Error
+        run: |
+          cd C:\npm\cache\_npx\1164\node_modules\eslint\lib\linter
+          sed -i '823s/??=/=/' linter.js
+
+
       - name: Upload ESLint results 
         uses: actions/upload-artifact@v4
         with:
