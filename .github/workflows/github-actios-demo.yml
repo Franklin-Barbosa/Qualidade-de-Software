@@ -51,11 +51,12 @@ jobs:
       ## Correção do erro de sintaxe no arquivo linter.js
       - name: Fix ESLint Syntax Error
         run: |
-          if [ -f "C:/npm/cache/_npx/7628/node_modules/eslint/lib/linter/linter.js" ]; then
-            sed -i 's/\(slots\.times\.passes\[passIndex\]\[type\]\) \?\?= {}/if (!\1) \1 = {};/' C:/npm/cache/_npx/7340/node_modules/eslint/lib/linter/linter.js
-          else
-            echo "File not found!"
-          fi
+          cd C:/npm/cache/_npx/7628/node_modules/eslint/lib/linter
+          if (Test-Path "linter.js") {
+            (Get-Content "linter.js") -replace '823s/??=/=/', | Set-Content "linter.js"
+          } else {
+            Write-Host "File not found!"
+          }
  
       - name: Run ESLint
         run: |
