@@ -57,7 +57,7 @@ jobs:
       ## Correção do erro de sintaxe no arquivo linter.js
       - name: Fix ESLint Syntax Error
         run: |
-          sed -i '823s/??=/=/' C:/npm/cache/_npx/7340/node_modules/eslint/lib/linter/linter.js
+          sed -i 's/slots.times.passes\[passIndex\]\[type\] ??= {};/if (!slots.times.passes[passIndex][type]) { slots.times.passes[passIndex][type] = {}; }/' C:/npm/cache/_npx/7340/node_modules/eslint/lib/linter/linter.js
 
       - name: Upload ESLint results 
         uses: actions/upload-artifact@v4
