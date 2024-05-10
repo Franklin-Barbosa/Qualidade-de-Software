@@ -52,7 +52,7 @@ jobs:
       - name: Fix ESLint Syntax Error
         run: |
           cd C:\npm\cache\_npx\1164\node_modules\eslint\lib\linter
-          sed -i '823s/??=/=/' linter.js
+          sed -i '823s/??=/=/' lib/linter/linter.js
  
       - name: Run ESLint
         run: |
