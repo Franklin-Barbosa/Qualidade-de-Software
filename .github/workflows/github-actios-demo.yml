@@ -53,7 +53,8 @@ jobs:
         run: |
           cd C:/npm/cache/_npx/7628/node_modules/eslint/lib/linter
           if (Test-Path "linter.js") {
-            (Get-Content "linter.js") -replace '823s/??=/=/', | Set-Content "linter.js"
+            $content = (Get-Content "linter.js") -replace '823s/??=/=/'
+            $content | Set-Content "linter.js"
           } else {
             Write-Host "File not found!"
           }
