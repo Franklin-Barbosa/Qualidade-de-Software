@@ -47,17 +47,17 @@ jobs:
       ## https://eslint.org/
       - name: Install ESLint and security plugin
         run: npm install eslint eslint-plugin-security --save-dev
+
+      ## Correção do erro de sintaxe no arquivo linter.js
+      - name: Fix ESLint Syntax Error
+        run: |
+          sed -i 's/\(slots\.times\.passes\[passIndex\]\[type\]\) \?\?= {}/if (!\1) \1 = {};/' C:/npm/cache/_npx/7340/node_modules/eslint/lib/linter/linter.js
  
       - name: Run ESLint
         run: |
           cd NOTES
           cd src
           npx eslint --ext js,jsx --report-unused-disable-directives
-
-      ## Correção do erro de sintaxe no arquivo linter.js
-      - name: Fix ESLint Syntax Error
-        run: |
-          sed -i 's/slots.times.passes\[passIndex\]\[type\] ??= {};/if (!slots.times.passes[passIndex][type]) { slots.times.passes[passIndex][type] = {}; }/' C:/npm/cache/_npx/7340/node_modules/eslint/lib/linter/linter.js
 
       - name: Upload ESLint results 
         uses: actions/upload-artifact@v4
