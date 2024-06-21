@@ -45,5 +45,5 @@ jobs:
       - name: Run Circular Dependency Check
         run: |
           cd NOTES
-          npx check:circles 
+          npx npx madge --circular --extensions tsx . 
 
