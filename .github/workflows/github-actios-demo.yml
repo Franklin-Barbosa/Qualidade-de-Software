@@ -38,6 +38,12 @@ jobs:
 
       - name: Run JSCPD
         run: |
-          cd  NOTES
+          cd NOTES
           cd src
           npx jscpd 
+
+      - name: Run Circular Dependency Check
+        run: |
+          cd NOTES
+          npx npx madge --circular --extensions tsx . 
+
