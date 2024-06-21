@@ -43,7 +43,7 @@ jobs:
           npx jscpd 
 
       - name: Run Circular Dependency Check
-        run: 
+        run: |
           cd NOTES
           cd src
           npm check:circles 
