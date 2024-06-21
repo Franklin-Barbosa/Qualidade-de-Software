@@ -43,5 +43,5 @@ jobs:
           npx jscpd 
 
       - name: Run Circular Dependency Check
-        run: npx check:circles 
+        run: npm check:circles 
 
