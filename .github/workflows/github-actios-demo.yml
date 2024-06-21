@@ -45,6 +45,5 @@ jobs:
       - name: Run Circular Dependency Check
         run: |
           cd NOTES
-          cd src
           npx check:circles 
 
