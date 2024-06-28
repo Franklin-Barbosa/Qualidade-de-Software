@@ -27,10 +27,10 @@ jobs:
         run: npm install eslint eslint-plugin-security --save-dev
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run ESLint with security plugin
-        run: yarn lint --ext js,jsx --report-unused-disable-directives
+        run: npm lint --ext js,jsx --report-unused-disable-directives
 
       - name: Upload ESLint results
         uses: actions/upload-artifact@v4
