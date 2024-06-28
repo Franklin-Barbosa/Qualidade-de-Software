@@ -23,6 +23,20 @@ jobs:
           npm install react
           npm install react-dom
 
+      - name: Install ESLint and security plugin
+        run: npm install eslint eslint-plugin-security --save-dev
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run ESLint with security plugin
+        run: yarn lint --ext js,jsx --report-unused-disable-directives
+
+      - name: Upload ESLint results
+        uses: actions/upload-artifact@v4
+        with:
+          name: eslint-results
+          path: .eslintcache
 
       - name: Format Code with Prettier
         run: |
