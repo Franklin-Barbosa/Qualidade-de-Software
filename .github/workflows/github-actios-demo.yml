@@ -26,6 +26,11 @@ jobs:
       - name: Install Flow
         run: npm install --save-dev flow-bin
 
+      - name: Run Flow
+        run: |
+          cd NOTES
+          npm run flow init
+          
       - name: Format Code with Prettier
         run: |
           cd NOTES
@@ -48,4 +53,5 @@ jobs:
         run: |
           cd NOTES
           npx npx madge --circular --extensions tsx . 
+ 
 
