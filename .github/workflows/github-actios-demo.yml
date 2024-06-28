@@ -23,6 +23,8 @@ jobs:
           npm install react
           npm install react-dom
 
+      - name: Install Flow
+        run: npm install --save-dev flow-bin
 
       - name: Format Code with Prettier
         run: |
